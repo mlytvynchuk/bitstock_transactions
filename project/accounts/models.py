@@ -8,7 +8,7 @@ class Account(models.Model):
     """
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='accounts')
-    balance = models.FloatField('balance', default=0)
+    balance = models.DecimalField('balance', decimal_places=2, max_digits=1000)
 
 
 class Transaction(models.Model):
@@ -27,3 +27,5 @@ class Transaction(models.Model):
     )
 
     account = models.ForeignKey(Account, on_delete=models.CASCADE, related_name='transactions')
+    amount = models.DecimalField('amount', decimal_places=2, max_digits=1000)
+    created_at = models.DateTimeField('created_at', auto_now_add=True)
