@@ -36,3 +36,4 @@ We can use db transactions to avoid bad cases.
 ### Task 4
 
 The perform_withdrawal service is unwritten.  Implement a basic version of this service - no extra models should be required.  What considerations might you need to make for this service, and how might you approach preventing any issues it might raise?
+I used database locking to avoid a few withdrawals at the same time and verified if account balance can be withdrawn with the specified amount.
