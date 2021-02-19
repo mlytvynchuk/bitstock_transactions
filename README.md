@@ -28,11 +28,11 @@ The accounts app has a tests.py, which has 2 tests, one of which fails.
 
 Why does the test fail?
 How can you change the application to fix the test?
-
+For precision, it's better to use DecimalField instead of FloatField. Changed a bit the model and tests.
 ### Task 3
 
-The deposit service is quite basic right now, and not much could go wrong.  But what risks are there with the way it's written? Imagine that it's possible for the creation of the Transaction to fail, what would happen in this case? What could you do to improve it?
-
+The deposit service is quite basic right now, and not much could go wrong. But what risks are there with the way it's written? Imagine that it's possible for the creation of the Transaction to fail, what would happen in this case? What could you do to improve it?
+We can use db transactions to avoid bad cases. 
 ### Task 4
 
 The perform_withdrawal service is unwritten.  Implement a basic version of this service - no extra models should be required.  What considerations might you need to make for this service, and how might you approach preventing any issues it might raise?
