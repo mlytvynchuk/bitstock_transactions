@@ -33,7 +33,9 @@ def perform_withdrawal(user, amount):
 
         new_transaction = Transaction.objects.create(
             account=account,
-            transaction_type=Transaction.TRANSACTION_TYPE_DEPOSIT
+            transaction_type=Transaction.TRANSACTION_TYPE_WITHDRAWAL,
+            amount=amount
+
         )
 
         return new_transaction
